@@ -1,7 +1,11 @@
 body {
   margin: 0;
   height: 100vh;
-  background-color: #8FBCB3;
+  background-color: #8fbcb3;
+
+  width: 100%;
+  display: grid;
+  grid-template-rows: 12% 88%;
 }
 
 p {
@@ -17,65 +21,63 @@ h1 {
   margin-left: 6px;
 }
 
-#caixa-geral {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-rows: 12% 88%;
-}
-
-#caixa-menu {
+#cabecalho {
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  &__titulo-menu {
+    width: 50%;
+  }
+
+  &__botoes-menu {
+    width: 50%;
+    justify-content: center;
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      padding: 4px;
+      margin: 10 0 0 0px;
+      gap: 4px;
+      text-align: end;
+      height: 100%;
+      margin-right: 8px;
+
+      li {
+        display: inline;
+        margin: 0 0 0 0px;
+        background-color: rgb(50, 36, 250);
+        color: white;
+        padding: 16px;
+        border-radius: 5%;
+      }
+    }
+  }
 }
 
-#caixa-menu-titulo-menu {
-  width: 50%;
-}
-#caixa-menu-botoes-menu {
-  width: 50%;
-  justify-content: center;
-}
-
-
-
-ul{
-  list-style: none;
-  padding: 4px;
-  margin: 10 0 0 0px;
-  gap: 4px;
-  text-align: end;
-  height: 100%;
-  margin-right: 8px;
-}
-
-nav li {
-  display: inline;
-  margin: 0 0 0 0px;    
-  background-color: rgb(50, 36, 250);
-  color: white;
-  padding: 16px;
-  border-radius: 5%;
-}
-
-#caixa-corpo {
-  border: solid 2px green;
+#principal {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
 
-#formulario {
-  border: solid 2px #788895;
-  background-color: #DFE6ED;
-  width: 30%;
-  height: 40%;
-  box-sizing: content-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  &__formulario {
+    border: solid 2px #788895;
+    background-color: #dfe6ed;
+    width: 30%;
+    height: 40%;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
 }
 
 /*input {
