@@ -1,25 +1,6 @@
-body {
-  margin: 0;
-  height: 100vh;
-  background-color: #8fbcb3;
-
-  width: 100%;
-  display: grid;
-  grid-template-rows: 12% 88%;
-}
-
-p {
-  margin: 0;
-  display: inline;
-  font-size: 34px;
-  margin-left: 6px;
-}
-
-h1 {
-  margin: 2 2 2 2px;
-  display: inline;
-  margin-left: 6px;
-}
+@import "cores.scss";
+@import "resets.scss";
+@import "layout.scss";
 
 #cabecalho {
   display: flex;

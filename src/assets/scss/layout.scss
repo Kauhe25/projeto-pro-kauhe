@@ -1,0 +1,21 @@
+@import "cores.scss";
+@import "resets.scss";
+
+body {
+    background-color: $verde;
+    display: grid;
+    grid-template-rows: 12% 88%;
+  }
+  
+  p {
+    margin: 0;
+    display: inline;
+    font-size: 34px;
+    margin-left: 6px;
+  }
+  
+  h1 {
+    margin: 2px;
+    display: inline;
+    margin-left: 6px;
+  }
