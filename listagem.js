@@ -1,5 +1,7 @@
 import './src/assets/scss/listagem.scss'
 
+const URL_API_CONSULTA_LIVROS = "https://api-aula.up.railway.app/livros";
+
 window.addEventListener("load", iniciarProcesso)
 
 async function iniciarProcesso() {
@@ -9,28 +11,15 @@ async function iniciarProcesso() {
     construirTabelaComLivros(livros)
 }
 
-function buscarLivros() {
-    return [
-        {   
-            id:"aaa",
-            title:"aaa",
-            descriprion:"aaa",
-        },
-        {   
-            id:"bb",
-            title:"bb",
-            descriprion:"b",
-        }, 
-        {
-            id:"cc",
-            title:"cc",
-            descriprion:"c",
-        },
-    ]
+async function buscarLivros() {
+    const response = await fetch(URL_API_CONSULTA_LIVROS);
+    const livros = await response.json();
+    return livros;
 }
 
 function construirTabelaComLivros(livros){
 
+    console.log(livros)
     //pegar elemento da tabela
     const corpoTabela = document.getElementById("tabelaLivros__tbody");
 
@@ -44,5 +33,4 @@ function construirTabelaComLivros(livros){
         </tr>`
     });
 
-    //construir a tabela
 }
