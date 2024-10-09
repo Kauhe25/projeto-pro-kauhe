@@ -4,8 +4,20 @@ const URL_API_CONSULTA_LIVROS = "https://api-aula.up.railway.app/livros";
 
 window.addEventListener("load", iniciarProcesso)
 
+document.getElementById("inputBuscarLivros")
+    .addEventListener("keyup", iniciarBusca)
+
+console.log("=== EXECUTANDO CONTEXTO GLOBAL !!! ====")
+let livros = [] // Global
+
+function iniciarBusca(){
+    const valorDeBusca = document.getElementById("inputBuscarLivros").value
+    const livrosFiltrados = livros.filter((livro) => livro.title.includes(valorDeBusca))
+    construirTabelaComLivros(livrosFiltrados)
+}
+
 async function iniciarProcesso() {
-    const livros = await buscarLivros()
+    livros = await buscarLivros()
     construirTabelaComLivros(livros)
 }
 
